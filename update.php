@@ -9,10 +9,10 @@ $db = new DBConnection("localhost", "root", "", "library");
  */
 function init(){
     global $title ;
-   global $author ;
-   global $description;
-   global $date_pub;
-   global $book;
+    global $author ;
+    global $description;
+    global $date_pub;
+    global $book;
 $title =null;
 $author =null;
 $description = null;
@@ -62,9 +62,7 @@ require_once("./partials/header.php")
 ?>
 
 <!-- main -->
-
-<div class="card my-4">
-    <?php
+<?php
             if (isset($error)) {
             echo "<div class='alert alert-danger'>",$error,"</div>";
             }
@@ -73,13 +71,15 @@ require_once("./partials/header.php")
             echo "<div class='alert alert-success'>",$success,"</div>";
             }
             ?>
+<div class="card my-4">
 
- 
+
+
+    <div class="card-header">
+        <h5 class="card-title text-center"> Update book </h5>
+    </div>
 
     <div class="card-body">
-        <div class="card-header">
-            <h5 class="card-title text-center"> Update book </h5>
-        </div>
 
         <form method="POST" action="">
             <div class="mb-3">

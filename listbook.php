@@ -11,6 +11,7 @@ $error = null;
 if (isset($_GET['id'])) {
     if($db->delete(Book::deleteByIdQuery,$_GET['id'] )){
         $success = "Book deleted successfully";
+        // $_GET['id'] = null;
     }else{
         $error = "Error of deletion";
     }
@@ -19,20 +20,20 @@ if (isset($_GET['id'])) {
 if(isset($_POST['search'])){
     $search = '%'.$_POST['search'].'%';
     $fields = [$search,$search,$search];
-    
    $result= $db->search(Book::searchQuery,"sss", $fields);
+   $_POST['search'] = null; 
 }
 
 ?>
 <?php
-            if (isset($error)) {
-            echo "<div class='alert alert-danger'>",$error,"</div>";
-            }
+    if (isset($error)) {
+       echo "<div class='alert alert-danger'>",$error,"</div>";
+     }
 
-            if (isset($success)) {
-            echo "<div class='alert alert-success'>",$success,"</div>";
-            }
-            ?>
+      if (isset($success)) {
+        echo "<div class='alert alert-success'>",$success,"</div>";
+      }      
+ ?>
 
 <form action="" method="post" class="my-3">
     <div class="input-group">
@@ -43,11 +44,11 @@ if(isset($_POST['search'])){
 
 
 <div class="card my-3">
-
+    <div class="card-header">
+        <h5 class="card-title text-center">List of Books</h5>
+    </div>
     <div class="card-body">
-        <div class="card-header">
-            <h5 class="card-title text-center">List of Books</h5>
-        </div>
+
 
         <table class="table table-bordered">
             <thead>

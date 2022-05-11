@@ -41,18 +41,13 @@ if (count($book->errorMsg)==0) {
       }
 }
 
-
-
-
 }
 
 require_once("./partials/header.php")
 ?>
 
 <!-- main -->
-
-<div class="card my-4">
-    <?php
+<?php
             if (isset($error)) {
             echo "<div class='alert alert-danger'>",$error,"</div>";
             }
@@ -61,10 +56,12 @@ require_once("./partials/header.php")
             echo "<div class='alert alert-success'>",$success,"</div>";
             }
             ?>
+<div class="card my-4">
+    <div class="card-header">
+        <h5 class="card-title text-center"> Add new book </h5>
+    </div>
     <div class="card-body">
-        <div class="card-header">
-            <h5 class="card-title text-center"> Add new book </h5>
-        </div>
+
 
         <form method="POST" action="">
             <div class="mb-3">
