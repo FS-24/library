@@ -1,4 +1,8 @@
 <?php
+require_once("./vendor/autoload.php");
+use Ablam\Book;
+use Ablam\DBConnection;
+
 require_once("./DBConnection.php");
 include_once("./Book.php");
 $db = new DBConnection("localhost", "root", "", "library");

@@ -1,8 +1,7 @@
 <?php
-require("./partials/header.php");
-require("./DbConnection.php");
-require("./Book.php");
-
+require_once("./vendor/autoload.php");
+use Ablam\Book;
+use Ablam\DBConnection;
 $db = new DBConnection("localhost", "root", "", "library");
 $book = new Book();
 $result = $db->getAll($book::selectQuery);
@@ -23,6 +22,7 @@ if(isset($_POST['search'])){
    $result= $db->search(Book::searchQuery,"sss", $fields);
    $_POST['search'] = null; 
 }
+require("./partials/header.php");
 
 ?>
 <?php

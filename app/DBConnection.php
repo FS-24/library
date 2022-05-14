@@ -1,4 +1,7 @@
 <?php
+ namespace Ablam;
+
+use mysqli;
 
 /**
  * DBConnection

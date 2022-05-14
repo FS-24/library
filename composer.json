@@ -1,0 +1,13 @@
+{
+    "name": "ablam/library",
+    "authors": [
+        {
+            "name": "Hippolyte EZIAN",
+            "email": "polarusdev@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Ablam\\": "app/"}
+    }
+}

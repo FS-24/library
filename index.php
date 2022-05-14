@@ -1,7 +1,15 @@
 <?php
-require_once("./DBConnection.php");
-include_once("./Book.php");
+
+use Ablam\Book;
+use Ablam\DBConnection;
+
+require_once("./vendor/autoload.php");
+
+
+
+
 $db = new DBConnection("localhost", "root", "", "library");
+// $pdoDB = new PdoDBConnection("root", "");
 /**
  * inititialize variables
  *
@@ -31,7 +39,8 @@ $date_pub = $_POST['date_pub'];
 $book->setTitle($title);
 $book->setAuthor($author);
 $book->setDescription($description);
-$book->setDatePub($date_pub);  
+$book->setDatePub($date_pub);
+  
 if (count($book->errorMsg)==0) {
     if ($db->add($book::insertQuery,"ssss",$book->getFields())) {
         $success = "added with success"  ;

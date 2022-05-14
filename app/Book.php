@@ -1,4 +1,8 @@
 <?php
+namespace Ablam;
+
+use \Exception;
+
 include ("./functions.php");
 /**
  * Book : manage book
